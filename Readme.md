@@ -22,6 +22,7 @@ https://chapter-dashboard-backned.onrender.com
 - **Redis (Upstash)** (Caching and Rate Limiting)
 - **TypeScript**
 - **Docker (for local Redis testing)**
+- **Multer (for file upload)**
 - **Postman** (for API testing)
 
 ---
@@ -71,14 +72,19 @@ Setup your env file with the help of .env.example file and if you don't want to 
 Also added in the repo checkout for detailed documentation of APIS and their uses with response examples
 
 ---
+### Author
+Praveen Patidar  praveen_k@bt.iitr.ac.in
+---
+
 ## ⚙️ How to Run Locally
 
 1. **Clone the repo**
 ```bash
-git clone https://github.com/your-username/chapter-dashboard-api.git
+git clone https://github.com/praveenpatidar171/chapter_dashboard_backned.git
 cd chapter-dashboard-api
 npm install
 npm run dev
+
 
 
 
