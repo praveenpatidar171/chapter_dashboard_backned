@@ -1,0 +1,435 @@
+{
+	"info": {
+		"_postman_id": "e58c4009-5c63-479f-85a2-428de8362426",
+		"name": "Chapter-Dashboard",
+		"description": "Three required APIs are here as mentioned in the task. and for more details please view documentation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33811256"
+	},
+	"item": [
+		{
+			"name": "get Paginated Chapters",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://chapter-dashboard-backned.onrender.com/api/v1/chapters?class=Class 11&subject=Physics",
+					"protocol": "https",
+					"host": [
+						"chapter-dashboard-backned",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"chapters"
+					],
+					"query": [
+						{
+							"key": "class",
+							"value": "Class 11"
+						},
+						{
+							"key": "subject",
+							"value": "Physics"
+						}
+					]
+				},
+				"description": "It will give all the chapters based on filters"
+			},
+			"response": [
+				{
+					"name": "get Paginated Chapters",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/chapters?class=Class 11&subject=Physics",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"chapters"
+							],
+							"query": [
+								{
+									"key": "class",
+									"value": "Class 11"
+								},
+								{
+									"key": "subject",
+									"value": "Physics"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "3775"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"ebf-09sbO4nzTUCOtmpzNUO+0m1cA48\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 05 Jun 2025 09:18:29 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"totalMatchingChapters\": 16,\n    \"page\": 1,\n    \"limit\": 10,\n    \"chapters\": [\n        {\n            \"_id\": \"6841591e51baef17e059ecc4\",\n            \"subject\": \"Physics\",\n            \"chapter\": \"Mathematics in Physics\",\n            \"class\": \"Class 11\",\n            \"unit\": \"Mechanics 1\",\n            \"yearWiseQuestionCount\": {\n                \"2019\": 0,\n                \"2020\": 2,\n                \"2021\": 5,\n                \"2022\": 5,\n                \"2023\": 3,\n                \"2024\": 7,\n                \"2025\": 6\n            },\n            \"questionSolved\": 0,\n            \"status\": \"Not Started\",\n            \"isWeakChapter\": false,\n            \"createdAt\": \"2025-06-05T08:45:18.830Z\",\n            \"updatedAt\": \"2025-06-05T08:45:18.830Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6841591e51baef17e059ecc7\",\n            \"subject\": \"Physics\",\n            \"chapter\": \"Motion In Two Dimensions\",\n            \"class\": \"Class 11\",\n            \"unit\": \"Mechanics 1\",\n            \"yearWiseQuestionCount\": {\n                \"2019\": 3,\n                \"2020\": 10,\n                \"2021\": 2,\n                \"2022\": 7,\n                \"2023\": 8,\n                \"2024\": 0,\n                \"2025\": 8\n            },\n            \"questionSolved\": 38,\n            \"status\": \"Completed\",\n            \"isWeakChapter\": true,\n            \"createdAt\": \"2025-06-05T08:45:18.831Z\",\n            \"updatedAt\": \"2025-06-05T08:45:18.831Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6841591e51baef17e059ecc8\",\n            \"subject\": \"Physics\",\n            \"chapter\": \"Laws of Motion\",\n            \"class\": \"Class 11\",\n            \"unit\": \"Mechanics 1\",\n            \"yearWiseQuestionCount\": {\n                \"2019\": 3,\n                \"2020\": 0,\n                \"2021\": 6,\n                \"2022\": 5,\n                \"2023\": 8,\n                \"2024\": 6,\n                \"2025\": 8\n            },\n            \"questionSolved\": 36,\n            \"status\": \"Completed\",\n            \"isWeakChapter\": true,\n            \"createdAt\": \"2025-06-05T08:45:18.831Z\",\n            \"updatedAt\": \"2025-06-05T08:45:18.831Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6841591e51baef17e059ecc9\",\n            \"subject\": \"Physics\",\n            \"chapter\": \"Work Power Energy\",\n            \"class\": \"Class 11\",\n            \"unit\": \"Mechanics 1\",\n            \"yearWiseQuestionCount\": {\n                \"2019\": 10,\n                \"2020\": 4,\n                \"2021\": 9,\n                \"2022\": 10,\n                \"2023\": 2,\n                \"2024\": 7,\n                \"2025\": 5\n            },\n            \"questionSolved\": 0,\n            \"status\": \"Not Started\",\n            \"isWeakChapter\": true,\n            \"createdAt\": \"2025-06-05T08:45:18.831Z\",\n            \"updatedAt\": \"2025-06-05T08:45:18.831Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6841591e51baef17e059ecca\",\n            \"subject\": \"Physics\",\n            \"chapter\": \"Center of Mass Momentum and Collision\",\n            \"class\": \"Class 11\",\n            \"unit\": \"Mechanics 1\",\n            \"yearWiseQuestionCount\": {\n                \"2019\": 7,\n                \"2020\": 5,\n                \"2021\": 2,\n                \"2022\": 7,\n                \"2023\": 6,\n                \"2024\": 10,\n                \"2025\": 0\n            },\n            \"questionSolved\": 0,\n            \"status\": \"Not Started\",\n            \"isWeakChapter\": true,\n            \"createdAt\": \"2025-06-05T08:45:18.831Z\",\n            \"updatedAt\": \"2025-06-05T08:45:18.831Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6841591e51baef17e059eccb\",\n            \"subject\": \"Physics\",\n            \"chapter\": \"Rotational Motion\",\n            \"class\": \"Class 11\",\n            \"unit\": \"Mechanics 1\",\n            \"yearWiseQuestionCount\": {\n                \"2019\": 9,\n                \"2020\": 9,\n                \"2021\": 9,\n                \"2022\": 9,\n                \"2023\": 9,\n                \"2024\": 2,\n                \"2025\": 5\n            },\n            \"questionSolved\": 52,\n            \"status\": \"Completed\",\n            \"isWeakChapter\": true,\n            \"createdAt\": \"2025-06-05T08:45:18.831Z\",\n            \"updatedAt\": \"2025-06-05T08:45:18.831Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6841591e51baef17e059ecc5\",\n            \"subject\": \"Physics\",\n            \"chapter\": \"Units and Dimensions\",\n            \"class\": \"Class 11\",\n            \"unit\": \"Mechanics 1\",\n            \"yearWiseQuestionCount\": {\n                \"2019\": 2,\n                \"2020\": 6,\n                \"2021\": 8,\n                \"2022\": 4,\n                \"2023\": 6,\n                \"2024\": 3,\n                \"2025\": 10\n            },\n            \"questionSolved\": 39,\n            \"status\": \"Completed\",\n            \"isWeakChapter\": true,\n            \"createdAt\": \"2025-06-05T08:45:18.831Z\",\n            \"updatedAt\": \"2025-06-05T08:45:18.831Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6841591e51baef17e059ecc6\",\n            \"subject\": \"Physics\",\n            \"chapter\": \"Motion In One Dimension\",\n            \"class\": \"Class 11\",\n            \"unit\": \"Mechanics 1\",\n            \"yearWiseQuestionCount\": {\n                \"2019\": 2,\n                \"2020\": 10,\n                \"2021\": 6,\n                \"2022\": 7,\n                \"2023\": 0,\n                \"2024\": 2,\n                \"2025\": 6\n            },\n            \"questionSolved\": 33,\n            \"status\": \"Completed\",\n            \"isWeakChapter\": true,\n            \"createdAt\": \"2025-06-05T08:45:18.831Z\",\n            \"updatedAt\": \"2025-06-05T08:45:18.831Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6841591e51baef17e059ecce\",\n            \"subject\": \"Physics\",\n            \"chapter\": \"Mechanical Properties of Fluids\",\n            \"class\": \"Class 11\",\n            \"unit\": \"Mechanics 2\",\n            \"yearWiseQuestionCount\": {\n                \"2019\": 2,\n                \"2020\": 0,\n                \"2021\": 1,\n                \"2022\": 0,\n                \"2023\": 0,\n                \"2024\": 7,\n                \"2025\": 8\n            },\n            \"questionSolved\": 0,\n            \"status\": \"Not Started\",\n            \"isWeakChapter\": false,\n            \"createdAt\": \"2025-06-05T08:45:18.831Z\",\n            \"updatedAt\": \"2025-06-05T08:45:18.831Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6841591e51baef17e059eccf\",\n            \"subject\": \"Physics\",\n            \"chapter\": \"Thermal Properties of Matter\",\n            \"class\": \"Class 11\",\n            \"unit\": \"Thermodynamics\",\n            \"yearWiseQuestionCount\": {\n                \"2019\": 6,\n                \"2020\": 9,\n                \"2021\": 10,\n                \"2022\": 0,\n                \"2023\": 0,\n                \"2024\": 9,\n                \"2025\": 1\n            },\n            \"questionSolved\": 35,\n            \"status\": \"Completed\",\n            \"isWeakChapter\": true,\n            \"createdAt\": \"2025-06-05T08:45:18.832Z\",\n            \"updatedAt\": \"2025-06-05T08:45:18.832Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "post chapters",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "postman-cloud:///1f0413ea-1682-4460-802d-f8bf6526b7f3"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://chapter-dashboard-backned.onrender.com/api/v1/chapters",
+					"protocol": "https",
+					"host": [
+						"chapter-dashboard-backned",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"chapters"
+					]
+				},
+				"description": "It is endpoint to post the data you need to add form-data in body and send the request, also in repo i have created a data.json file for testing if needed and also i have attached some example response"
+			},
+			"response": [
+				{
+					"name": "post chapters",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/PRAVEEN/Desktop/projects/chapter-backend/data.json"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/chapters",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"chapters"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "417"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1a1-N2MdTGKOdM7IWOILr+D1pyx00d0\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 05 Jun 2025 09:28:09 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Invalid Date"
+						}
+					],
+					"body": "{\n    \"message\": \"Upload Complete\",\n    \"success\": true,\n    \"successCount\": 100,\n    \"failedCount\": 1,\n    \"failedUploads\": [\n        {\n            \"chapterData\": {\n                \"chapter\": \"Mathematics in Physics\",\n                \"class\": \"Class 11\",\n                \"unit\": \"Mechanics 1\",\n                \"yearWiseQuestionCount\": {\n                    \"2019\": 0,\n                    \"2020\": 2,\n                    \"2021\": 5,\n                    \"2022\": 5,\n                    \"2023\": 3,\n                    \"2024\": 7,\n                    \"2025\": 6\n                },\n                \"questionSolved\": 0,\n                \"status\": \"Not Started\",\n                \"isWeakChapter\": false\n            },\n            \"error\": \"Chapter validation failed: subject: Path `subject` is required.\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "success post",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "postman-cloud:///1f0413ea-1682-4460-802d-f8bf6526b7f3"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/chapters",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"chapters"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "98"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"62-P3DRL3h0e/VK5HErc5cvEq0wUqw\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 05 Jun 2025 09:36:36 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Upload Complete\",\n    \"success\": true,\n    \"successCount\": 101,\n    \"failedCount\": 0,\n    \"failedUploads\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "get Single Chapter",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://chapter-dashboard-backned.onrender.com/api/v1/chapters/6841591e51baef17e059ecc7",
+					"protocol": "https",
+					"host": [
+						"chapter-dashboard-backned",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"chapters",
+						"6841591e51baef17e059ecc7"
+					]
+				},
+				"description": "it is to fetch a single chapter by id, need to pass id as a params also to test rate limit easily send this request more than 30 times in a minute and"
+			},
+			"response": [
+				{
+					"name": "single chapter",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/chapters/6841591e51baef17e059ecc7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"chapters",
+								"6841591e51baef17e059ecc7"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "396"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"18c-5OIGeXnWAwYSH9d0UHccm3N5LDw\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 05 Jun 2025 09:16:20 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"chapter\": {\n        \"_id\": \"6841591e51baef17e059ecc7\",\n        \"subject\": \"Physics\",\n        \"chapter\": \"Motion In Two Dimensions\",\n        \"class\": \"Class 11\",\n        \"unit\": \"Mechanics 1\",\n        \"yearWiseQuestionCount\": {\n            \"2019\": 3,\n            \"2020\": 10,\n            \"2021\": 2,\n            \"2022\": 7,\n            \"2023\": 8,\n            \"2024\": 0,\n            \"2025\": 8\n        },\n        \"questionSolved\": 38,\n        \"status\": \"Completed\",\n        \"isWeakChapter\": true,\n        \"createdAt\": \"2025-06-05T08:45:18.831Z\",\n        \"updatedAt\": \"2025-06-05T08:45:18.831Z\",\n        \"__v\": 0\n    }\n}"
+				},
+				{
+					"name": "rate limit example",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/chapters/6841591e51baef17e059ecc7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"chapters",
+								"6841591e51baef17e059ecc7"
+							]
+						}
+					},
+					"status": "Too Many Requests",
+					"code": 429,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "82"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"52-mp6b+xm2QqY/jqXZ7On56ggFVS8\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 05 Jun 2025 09:25:57 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"message\": \"Rate limit exceeded. Max 30 requests per 60 seconds.\"\n}"
+				}
+			]
+		}
+	]
+}
