@@ -16,7 +16,7 @@ export const rateLimit = async (req: Request, res: Response, next: NextFunction)
         const currentRequests = await redisClient.get(redisKey);
 
         if (currentRequests === null) {
-            // First request from this IP - set key with expiration
+            // First request from this IP - set key with expiration and initialize counter with 1
             await redisClient.set(redisKey, "1",
                 "EX", WINDOW_SIZE_IN_SECONDS,
             );

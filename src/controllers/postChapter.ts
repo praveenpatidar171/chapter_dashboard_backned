@@ -4,6 +4,7 @@ import { clearChapterCache } from "../utils/redisHelper";
 
 export const postChapter = async (req: Request, res: Response) => {
 
+    // Check if a JSON file was uploaded
     if (!req.file) {
         res.status(400).json({
             message: 'JSON file is required',
@@ -14,6 +15,7 @@ export const postChapter = async (req: Request, res: Response) => {
 
     let chaptersArray: any[];
 
+    // Parse and validate the uploaded JSON file content
     try {
         chaptersArray = JSON.parse(req.file.buffer.toString());
         if (!Array.isArray(chaptersArray)) {
@@ -32,25 +34,31 @@ export const postChapter = async (req: Request, res: Response) => {
         return;
     }
 
-    const failedUploads: any[] = [];
-    const successUploads: IChapter[] = []
+    // Process all chapters parallely, catching individual errors
+    const processedResults = await Promise.all(
+        chaptersArray.map(async (chapterData) => {
+            try {
+                const chapter = new Chapter(chapterData);
+                await chapter.validate();
+                const saved = await chapter.save();
+                return { success: true, data: saved };
+            } catch (error: any) {
+                return { success: false, data: chapterData, error: error.message };
+            }
+        })
+    );
 
-    for (const chapterData of chaptersArray) {
-        try {
+    // Separate successes and failures
+    const successUploads = processedResults
+        .filter((r) => r.success)
+        .map((r) => r.data);
 
-            const chapter = new Chapter(chapterData);
-            await chapter.validate();
+    const failedUploads = processedResults
+        .filter((r) => !r.success)
+        .map(({ data, error }) => ({ chapterData: data, error }));
 
-            const saved = await chapter.save();
-            successUploads.push(saved);
 
-        } catch (error: any) {
-            failedUploads.push({ chapterData, error: error.message });
-        }
-    }
-
-    // clears redis after new upload
-
+    // clear Redis cache since new chapters were added
     await clearChapterCache();
 
     res.status(201).json({

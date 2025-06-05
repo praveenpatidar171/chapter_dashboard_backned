@@ -6,6 +6,7 @@ export const getChapter = async (req: Request, res: Response) => {
 
     try {
 
+        // Extract and parse filters and pagination params from query string
         const {
             class: classFilter,
             unit,
@@ -16,8 +17,9 @@ export const getChapter = async (req: Request, res: Response) => {
             limit = "10"
         } = req.query;
 
-        const filter: any = {}
 
+        // Build filter object dynamically based on query params
+        const filter: any = {}
         if (classFilter) filter.class = classFilter;
         if (unit) filter.unit = unit;
         if (status) filter.status = status;
@@ -26,28 +28,33 @@ export const getChapter = async (req: Request, res: Response) => {
             filter.isWeakChapter = weakChapters === 'true';
         }
 
+
+        // Parse pagination parameters with defaults
         const pageNumber = Number(page) || 1
-
         const limitNumber = Number(limit) || 10
-
         const skip = (pageNumber - 1) * limitNumber;
 
-        // Generate a Redis cache key based on the query
-        const redisKey = `chapters:${JSON.stringify(req.query)}`;
+        // Sort query keys to create consistent Redis cache key
+        const sortedQuery = Object.keys(req.query)
+            .sort()
+            .reduce((acc: any, key) => {
+                acc[key] = req.query[key];
+                return acc;
+            }, {});
+        const redisKey = `chapters:${JSON.stringify(sortedQuery)}`;
 
+
+        // Try to get cached response from Redis
         const cachedData = await redis.get(redisKey);
-
         if (cachedData) {
-            console.log("Cache hit:", redisKey);
             res.status(200).json(JSON.parse(cachedData));
             return
         }
 
-        //total documents matching the filter
+        // Fetch total number of chapters matching filter (for pagination info)
         const total = await Chapter.countDocuments(filter);
 
-        //paginated documents 
-
+        // Fetch paginated chapter data from DB
         const chapters = await Chapter.find(filter).skip(skip).limit(limitNumber).exec();
 
 
