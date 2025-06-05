@@ -10,8 +10,6 @@ if (!process.env.REDIS_URL) {
 
 const redis = global.redisClient || new Redis(process.env.REDIS_URL);
 
-console.log("Redis client instance:", global.redisClient);
-
 redis.on("connect", () => {
     console.log("Redis connected");
 });
