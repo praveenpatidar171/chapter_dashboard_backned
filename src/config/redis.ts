@@ -1,9 +1,16 @@
 import Redis from "ioredis";
 
-const redis = new Redis({
-    host: process.env.REDIS_HOST || 'localhost',
-    port: Number(process.env.REDIS_PORT) || 6379
-});
+declare global {
+    var redisClient: Redis | undefined;
+}
+
+if (!process.env.REDIS_URL) {
+    throw new Error("REDIS_URL must be set in environment variables");
+}
+
+const redis = global.redisClient || new Redis(process.env.REDIS_URL);
+
+console.log("Redis client instance:", global.redisClient);
 
 redis.on("connect", () => {
     console.log("Redis connected");
@@ -12,5 +19,9 @@ redis.on("connect", () => {
 redis.on("error", (err) => {
     console.error("Redis error:", err);
 });
+
+if (process.env.NODE_ENV !== "production") {
+    global.redisClient = redis;
+}
 
 export default redis;

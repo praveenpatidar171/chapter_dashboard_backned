@@ -1,5 +1,4 @@
 import redisClient from '../config/redis'
-
 export const clearChapterCache = async () => {
     try {
         const keys = await redisClient.keys("chapters:*");
